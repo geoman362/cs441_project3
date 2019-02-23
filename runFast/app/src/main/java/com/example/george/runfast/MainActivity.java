@@ -29,13 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Button playbutt = (Button) findViewById(R.id.playButton);
-        playbutt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent play = new Intent(this, )
-            }
 
-        };
     }
 
     @Override
