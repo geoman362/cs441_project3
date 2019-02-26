@@ -1,11 +1,15 @@
 package com.example.george.runfast;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ratRace = new ratRace(this);
+        setContentView(ratRace);
+        /*setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -27,10 +33,26 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
-        Button playbutt = (Button) findViewById(R.id.playButton);
+
+        }); */
+        //Button playbutt = (Button) findViewById(R.id.playButton);
 
     }
+
+    class AsteroidView extends SurfaceView implements Runnable {
+        Thread gameThread = null;
+        SurfaceHolder ourHolder;
+        volatile boolean playing;
+        boolean paused = true;
+        Canvas canvas;
+        Paint paint;
+        int y;
+        int posx, posy;
+        int dx, dy;
+        int height, width;
+        boulder[] b;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

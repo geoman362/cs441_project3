@@ -10,9 +10,5 @@
         android:name="com.example.george.runfast.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-    <activity
-        android:id="@+id/gameActivity"
-        android:name="com.example.george.runfast.GameActivity"
-        android:label="activity_game"
-        tools:layout="@layout/activity_game" />
+    <fragment android:id="@+id/placeholder" />
 </navigation>
