@@ -17,8 +17,8 @@ public class rat {
         if (y > height) dy = -dy;
     }
 
-    public void draw(Canvas canvas, Paint paint)
+    /*public void draw(Canvas canvas, Paint paint)
     {
         canvas.draw(x, y, diameter, paint);
-    }
+    }*/
 }
